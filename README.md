@@ -60,6 +60,5 @@ Fonte: **SIH/SUS** (arquivos `.dbc` no DATASUS)
 ## 🛠️ Ferramentas e papéis
 - **S3** → Data Lake (Raw/Bronze/Silver/Gold).
 - **Databricks** → Processamento e ingestão.
-- **dbt Core** (no Databricks) → Transformação, modelagem e documentação.
 - **Delta Lake** → Formato otimizado para consultas e histórico.
 - *(Opcional)* **Metabase** / **Power BI** para visualização.
