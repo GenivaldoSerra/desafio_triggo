@@ -1,0 +1,6 @@
+# Python-related files to ignore
+.venv
+.env
+__pycache__
+src/convertidos
+src/dados_sih
