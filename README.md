@@ -1,4 +1,4 @@
-# 📌 Tema sugerido
+# 📌 Tema
 **Análise das Internações Hospitalares por Doenças Respiratórias no Brasil (2015–2024)**  
 Fonte: **SIH/SUS** (arquivos `.dbc` no DATASUS)
 
@@ -14,7 +14,7 @@ Fonte: **SIH/SUS** (arquivos `.dbc` no DATASUS)
 
 ---
 
-## 🏗️ Arquitetura sugerida
+## 🏗️ Arquitetura
 
 ### **Camadas e fluxo**
 #### **Raw Layer** (S3)
@@ -32,7 +32,6 @@ Fonte: **SIH/SUS** (arquivos `.dbc` no DATASUS)
 - Normalizar códigos CID-10.
 - Criar coluna `faixa_etaria` e `sexo`.
 - Adicionar dimensão de tempo e localidade (via IBGE).
-- Dividir em tabelas intermediárias (**staging**) no dbt.
 
 #### **Gold Layer**
 - **Modelagem dimensional (Star Schema)**:
@@ -64,12 +63,3 @@ Fonte: **SIH/SUS** (arquivos `.dbc` no DATASUS)
 - **dbt Core** (no Databricks) → Transformação, modelagem e documentação.
 - **Delta Lake** → Formato otimizado para consultas e histórico.
 - *(Opcional)* **Metabase** / **Power BI** para visualização.
-
----
-
-## 🚀 Extras para ganhar diferencial
-- Implementar **pipeline incremental** no dbt para novas cargas anuais.
-- Criar **testes de integridade** para validar dados do CID-10 e chaves primárias.
-- Usar **time travel** no Delta Lake para mostrar histórico.
-- Adicionar **dimensão geográfica** enriquecida com população do IBGE (permitindo calcular taxas por 100 mil hab.).
-- Simular orquestração com **Databricks Jobs** ou diagrama de **Airflow**.
